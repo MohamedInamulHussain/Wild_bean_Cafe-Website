@@ -381,7 +381,7 @@ Choco Truffle</h1>
       </section>
 
       <section id="events" className="events">
-        <img src='src/assets/overline.png'></img>
+        <img src={overline}></img>
         <div className="container">
           <h2>Celebrations & Events</h2>
           <div className="events-grid">
