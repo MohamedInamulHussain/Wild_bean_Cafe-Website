@@ -3,8 +3,39 @@ import Slider from 'react-slick';
 import { Star, MapPin, Phone, Mail, Coffee, Clock, Magnet, User, DoorClosed } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
- 
+import ground from './assets/ground.jpg';
+import board from './assets/board.jpg';
+import board2 from './assets/board2.png';
+import g1 from './assets/galary/g1.jpg';
+import g2 from './assets/galary/g2.jpeg';
+import g3 from './assets/galary/g3.jpg';
+import g5 from './assets/galary/g5.jpeg';
+import g6 from './assets/galary/g6.jpg';
+import g7 from './assets/galary/g7.webp';
+import g9 from './assets/galary/g9.jpg';
+import g10 from './assets/galary/g10.jpg';
+import g11 from './assets/galary/g11.jpeg';
+import g12 from './assets/galary/g12.jpeg';
+import g13 from './assets/galary/g13.jpeg';
 
+import HeroLogo from './assets/HeroLogo.png';
+import HeroLogoText from './assets/HeroLogoText.png';
+import owner2 from './assets/owner2.jpg';
+import cofeesplash from './assets/cofeesplash.png';
+
+//product section images
+import cofeePouch from './assets/cofee-pouch.png';
+
+import overline from './assets/overline.png';
+import underline from './assets/underline.png';
+
+import celebration from './assets/celebration.png';
+import corporate from './assets/corporate.png';
+import privateParty from './assets/privateParty.jpg';
+//review images
+import person11 from './assets/person11.webp';
+import person2 from './assets/person2.webp';
+import person3 from './assets/person3.jpg';
 // Welcome to Wild Beans Café 
 // Where Every Cup Tells a Story
 function App() {
@@ -17,36 +48,23 @@ function App() {
  
   const heroSlides = [
     {
-      image: "src/assets/ground.jpg",
+      image: ground,
       title: "Wild Beans Café",
       subtitle: "Where Every Cup Tells a Story"
     },
     {
-      image: "src/assets/board.jpg",
+      image: board,
       title: "",
       subtitle: ""
     },
     {
-      image: "src/assets/board2.png",
+      image: board2,
       title: "",
       subtitle: ""
     }
   ];
 
-  const galleryImages = [
-    "src/assets/galary/g1.jpg",
-    "src/assets/galary/g2.jpeg",
-    "src/assets/galary/g3.jpg",
-    "src/assets/galary/g5.jpeg",
-    "src/assets/galary/g6.jpg",
-    "src/assets/galary/g7.webp",
-    "src/assets/galary/g9.jpg",
-    "src/assets/galary/g10.jpg",
-    "src/assets/galary/g11.jpeg",
-    "src/assets/galary/g12.jpeg",
-    "src/assets/galary/g13.jpeg"
-
-  ];
+  const galleryImages = [g1, g2, g3, g5, g6, g7, g9, g10, g11, g12, g13];
 
   const sliderSettings = {
     dots: true,
@@ -122,8 +140,8 @@ function App() {
           ))}
         </Slider>
         <div className="LogoRotate">
-          <img src="src/assets/HeroLogo.png" className="HeroLogo"></img>
-          <img src="src/assets/HeroLogoText.png" className="HeroLogoText"></img>
+          <img src={HeroLogo} className="HeroLogo"></img>
+          <img src={HeroLogoText} className="HeroLogoText"></img>
         </div>
       </section>
 
@@ -147,7 +165,7 @@ function App() {
           <div className="owner-content">
             <div className="owner-image" data-aos="flip-right">
               <img 
-                src="src/assets/owner2.jpg" 
+                src={owner2}
                 alt="Café Owner"
               />
             </div>
@@ -164,7 +182,8 @@ function App() {
       </section>
       <section id="cofeeAnim" className='cofeeAnim'>
         <div className='Imgcontainer'>
-              <img src='src/assets/cofeesplash.png'></img>
+
+              <img src={cofeesplash}></img>
               <div className="Marquecontainer">
   <div className="scroll">
     {/* Right to Left Scrolling Content */}
@@ -228,27 +247,27 @@ function App() {
         <p>Showcases the lates additions and updates to our collections</p>
         <div className='Product-container'>
           <div className='productDetail'>       
-            <img src='src/assets/cofee-pouch.png'></img>
+            <img src={cofeePouch}></img>
             <h2 style={{fontSize:"17px",fontWeight:"800"}}>Gayo Tangkengon</h2>
             <h2 style={{fontSize:"17px",fontWeight:"800"}}>$43</h2>
           </div>
           <div className='productDetail'>       
-            <img src='src/assets/cofee-pouch.png'></img>
+            <img src={cofeePouch}></img>
             <h2 style={{fontSize:"17px",fontWeight:"800"}}>Bali Kintamani</h2>
             <h2 style={{fontSize:"17px",fontWeight:"800"}}>$52</h2>
           </div>
           <div className='productDetail'>       
-            <img src='src/assets/cofee-pouch.png'></img>
+            <img src={cofeePouch}></img>
             <h2 style={{fontSize:"17px",fontWeight:"800"}}>Flores Manggarai</h2>
             <h2 style={{fontSize:"17px",fontWeight:"800"}}>$48</h2>
           </div>
           <div className='productDetail'>       
-            <img src='src/assets/cofee-pouch.png'></img>
+            <img src={cofeePouch}></img>
             <h2 style={{fontSize:"17px",fontWeight:"800"}}>Gunung Tanggamu</h2>
             <h2 style={{fontSize:"17px",fontWeight:"800"}}>$49</h2>
           </div>
           <div className='productDetail'>       
-            <img src='src/assets/cofee-pouch.png'></img>
+            <img src={cofeePouch}></img>
             <h2 style={{fontSize:"17px",fontWeight:"800"}}>Regular Special</h2>
             <h2 style={{fontSize:"17px",fontWeight:"800"}}>$40</h2>
           </div>
@@ -264,7 +283,7 @@ function App() {
         </div>
       </section>
       <section className='blackContent'>
-      <img src='src/assets/overline.png'></img>
+      <img src={overline}></img>
         <h2>SIGNATURE DELIGHT</h2>
         <h1>Our Special Items</h1>
         <div className='Item-card-container' data-aos="fade-up">
@@ -343,7 +362,7 @@ Choco Truffle</h1>
         </div> 
 
       </div>
-      <img src='src/assets/underline.png' className='underlineImg'></img>
+      <img src={underline} className='underlineImg'></img>
       </section>
 
       <section id="gallery" className="gallery">
@@ -367,21 +386,21 @@ Choco Truffle</h1>
           <h2>Celebrations & Events</h2>
           <div className="events-grid">
             <div className="event-card" data-aos="zoom-in">
-              <img src="src/assets/celebration.png" alt="anniversary celebration" />
+              <img src={celebration} alt="anniversary celebration" />
               <div className="event-content">
                 <h3>Outdoor Celebrations</h3>
                 <p>Make your special day even more memorable with our celebration packages.</p>
               </div>
             </div>
             <div className="event-card" data-aos="zoom-in">
-              <img src="src/assets/corporate.png" alt="Corporate meeting" />
+              <img src={corporate} alt="Corporate meeting" />
               <div className="event-content">
                 <h3>Corporate meetings</h3>
                 <p>Perfect space for team meetings and corporate gatherings.</p>
               </div>
             </div>
             <div className="event-card" data-aos="zoom-in">
-              <img src="src/assets/privateParty.jpg" alt="Wedding reception" />
+              <img src={privateParty} alt="Wedding reception" />
               <div className="event-content">
                 <h3>Private Parties</h3>
                 <p>Host your private events in our charming atmosphere.</p>
@@ -389,7 +408,7 @@ Choco Truffle</h1>
             </div>
           </div>
         </div>
-        <img src='src/assets/underline.png' style={{filter:"brightness(0%)"}}></img>
+        <img src={underline} style={{filter:"brightness(0%)"}}></img>
       </section>
 
       <section id="reviews" className="reviews">
@@ -398,7 +417,7 @@ Choco Truffle</h1>
           <div className="reviews-grid">
             <div className="review-card" data-aos="zoom-in-right">
               <div className="review-image">
-                <img src="src/assets/person11.webp" alt="Sarah Johnson" />
+                <img src={person11} alt="Sandy" />
               </div>
               <div className="stars">
                 {[...Array(5)].map((_, i) => (
@@ -410,7 +429,7 @@ Choco Truffle</h1>
             </div>
             <div className="review-card" data-aos="zoom-in">
               <div className="review-image">
-                <img src="src/assets/person2.webp" />
+                <img src={person2} />
               </div>
               <div className="stars">
                 {[...Array(5)].map((_, i) => (
@@ -422,7 +441,7 @@ Choco Truffle</h1>
             </div>
             <div className="review-card"  data-aos="zoom-in-left">
               <div className="review-image">
-                <img src="src/assets/person3.jpg" alt="Emily Rodriguez" />
+                <img src={person3} alt="Sanjay Dutt" />
               </div>
               <div className="stars">
                 {[...Array(5)].map((_, i) => (
