@@ -1,0 +1,1038 @@
+/* @charset 'UTF-8'; */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap');
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+@import "tailwindcss";
+/* @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+:root {
+  --color-primary: #4A3428;
+  --color-secondary: #8B5E3C;
+  --color-accent: #D4A574;
+  --color-cream: #F5E6D3;
+  --color-white: #FFFFFF;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  line-height: 1.6;
+  color: var(--color-primary);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Reduced padding to avoid extra spacing */
+  overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgb(0, 0, 0);
+  padding: 1rem 0;
+  z-index: 1000;
+  font-family: poppins;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Prevent overflow */
+}
+
+.nav-logo {
+  color: var(--color-white);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  width: 90px;
+  height: 50px;
+  background-image: url("./assets/wildbean.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: rgb(255, 0, 255);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
+/* Hamburger menu icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1100;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(255, 0, 255);
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-links {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  
+  height: 100vh;
+  background-color: black;
+}
+
+/* .hero-slider {
+  height: calc(100vh - 80px);
+} */
+
+.hero-slide {
+  height: calc(100vh - 80px);
+  position: relative;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-white);
+  z-index: 2;
+  width: 80%;
+  max-width: 800px;
+}
+
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.541);
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  font-family: poppins;
+  /* margin-bottom: 0.5rem; */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.LogoRotate{
+  background-color: rgba(255, 0, 0, 0);
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  bottom:30px;
+  right:30px;
+}
+.LogoRotate .HeroLogo{
+  /* position: relative; */
+  position: absolute;
+  z-index: 10;
+
+}
+.LogoRotate .HeroLogoText{
+  /* position: relative; */
+  position: absolute;
+  transform: translate(-0%, -0%);
+  
+  z-index: 0;
+  animation: rotateAnimation 10s linear infinite;
+  transform-origin: center center;
+}
+@keyframes rotateAnimation {
+  from { transform: translate(-0%, -0%) rotateZ(0deg); }
+  to { transform: translate(-0%, -0%) rotateZ(360deg); }
+}
+/* About Section */
+.about {
+  padding: 6rem 0;
+  background-color: black;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.95) 30%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.1) 90%), 
+    url("./assets/cofee.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.about-content {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  font-size: 23px;
+  background-color: rgba(255, 0, 0, 0);
+  height:60vh;
+  width:900px;
+}
+
+/* Owner Section */
+.owner {
+  padding: 6rem 0;
+}
+
+.owner-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.owner-content h2 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.owner-content h1 {
+  font-size: 70px;
+  font-weight: 900;
+}
+
+.owner-image {
+  width: 400px;
+  height: 400px;
+  background-color: red;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.owner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* cofee animation */
+.cofeeAnim{
+  width: 100%;
+  height:100vh;
+  background-color: rgba(0, 0, 0, 0);
+}
+.cofeeAnim .Imgcontainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center; 
+}
+.Imgcontainer img {
+  width: 48%; 
+  z-index: 10;
+}
+/* marque effect */
+.Marquecontainer {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: #00000000;
+  position: absolute;
+}
+
+/* Ensure the scrolling area is long enough */
+.scroll {
+  display: flex;
+  white-space: nowrap;
+  gap: 2em;
+}
+
+/* Each scrolling block */
+.scroll div {
+  display: flex;
+  gap: 2em;
+}
+@import url('https://fonts.googleapis.com/css2?family=Bangers:wght@400&display=swap');
+
+/* Text styling */
+.scroll p {
+  font-size: 10em;
+  font-family:  "Bangers"; 
+  color:var(--color-secondary);
+  font-weight: bold;
+  margin-bottom: 0;
+  line-height: 10px;
+}
+.scroll .LeftToRight p{
+  color: rgb(59, 11, 11);
+  /* color:var(--color-secondary); */
+}
+/* Right to Left Scroll - Seamless */
+.RightToLeft {
+  position:absolute;
+  top:130px;
+  display: flex;
+  animation: seamless-scroll-left 290s linear infinite;
+}
+
+/* Left to Right Scroll - Seamless */
+.LeftToRight {
+  position:absolute;
+  bottom: 330px;
+  display: flex;
+  animation: seamless-scroll-right 290s linear infinite;
+}
+.RightToLeftBottom {
+  position:absolute;
+  bottom:130px;
+  display: flex;
+  animation: seamless-scroll-left 290s linear infinite;
+}
+/* Right to Left Animation */
+@keyframes seamless-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Left to Right Animation (Fixed!) */
+@keyframes seamless-scroll-right {
+  0% {
+    transform: translateX(-90%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* products section */
+.products{
+  height: 200vh;
+  width: 100%;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.Product-container{
+  width: 100%;
+  height:300px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+}
+.Product-container .productDetail{
+  width: 200px;
+  height: auto; 
+  display: flex;
+  justify-content: center;  /* Horizontally centers */
+  align-items: center;
+  flex-direction: column;
+}
+.premiumQuality-section{
+  width: 100%;
+  height:500px;
+  margin-top: 100px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+.premiumImgContainer{
+  width: 40%;
+  height: auto;
+  /* background-color: pink; */
+  background-image: url('./assets/premium.png');
+  background-size: cover;
+  background-position: 0px -20px;
+}
+.premiumQuality-section .textContainer{
+  width: 40%;
+  height: auto;
+  text-align: left;
+  /* background-color: pink; */
+}
+.premiumQuality-section h1{
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: bolder;
+}
+.premiumQuality-section #a{
+  margin-top: 15px;
+}
+.premiumQuality-section #b{
+  margin-top: 55px;
+  text-align: right;
+}
+.premiumQuality-section button{
+  width:170px;
+  background-color: var(--color-primary);
+  color:white;
+  font-size: 15px;
+  margin-top: 20px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+/* black content area */
+.blackContent{
+  height:230vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+}
+.blackContent h2{
+  font-size: 20px;
+  font-family: poppins;
+  font-weight: 600;
+  color:var(--color-accent);
+}
+.blackContent h1{
+  font-size: 40px;
+  font-family: poppins;
+  font-weight: 600;
+  color:white;
+}
+.Item-card-container{
+  width:80%;
+  height:100vh;
+  margin-left: 10%;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap:2rem;
+  
+}
+
+.Item-card-container .item-card{
+  width: 320px;
+  height: 320px; 
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  justify-content: center;  /* Horizontally centers */
+  align-items: center;
+  flex-direction: column;
+  background-color: red;
+  /* background-image: url('./assets/cappuccino.avif'); */
+  background-size: cover;
+  font-family: poppins;
+  background-repeat: no-repeat;  
+}
+
+
+/* adding background to card */
+#card1{ background-image: url('./assets/chocolate4.jpg');}
+#card2{ background-image: url('./assets/chocolateCostliest.jpg');}
+#card3{ background-image: url('./assets/cake6.avif');}
+#card4{ background-image: url('./assets/espresso2.png');}
+#card5{ background-image: url('./assets/chocolate2.jpg');}
+#card6{ background-image: url('./assets/cake2.jpg');}
+#card7{ background-image: url('./assets/cake4.jpg');}
+.item-card h1{
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.item-card p{
+  font-size: 10px;
+  font-weight: 300;
+  margin-top: 10px;
+  color: white;
+  padding: 10px;
+  padding-top: 0px;
+}
+.item-card .card-blur{
+  width:90%;
+  height:45%;
+  margin-top: 150px;
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.item-card button{
+  height:30px;
+  width: 100px;
+  font-size: 10px;
+  color:var(--color-accent);
+  font-weight: 400;
+  margin-top: 6px;
+  border: 1px solid var(--color-accent);
+  border-radius: 5px;
+}
+.item-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+/* Zoom effect on hover */
+.item-card:hover {
+  transform: scale(1.1);
+}
+
+/* Keep content (text, buttons) above background */
+.item-card .card-blur {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* franchise partner */
+.franchise{
+  height:230vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+}
+.franchise h2{
+  font-size: 20px;
+  font-family: poppins;
+  font-weight: 600;
+  color:var(--color-accent);
+}
+.franchise h1{
+  font-size: 40px;
+  font-family: poppins;
+  font-weight: 600;
+  color:white;
+}
+.partnerContainer{
+    width:90%;
+    height:100vh;
+    /* background-color: red; */
+    /* display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap: 10px; */
+}
+.partner1 {
+  width: 900px;
+  height: 300px;
+  margin-top: 100px;
+  margin-left: -120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* ✅ Fix for absolute positioning inside */  
+  /* Corrected background with gradient */
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0),rgba(48, 48, 48, 0.24), rgb(0, 0, 0) 90%),
+    url('./assets/vikramMain.png');  
+  background-size: cover;
+  background-position: center;
+}
+.map1 {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  right: -480px; /* ✅ Adjust this instead of margin-left */
+  top: -100px;   /* ✅ Position it properly */
+  background-image: url('./assets/map/usa2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.partner2 {
+  width: 900px;
+  height: 300px;
+  margin-top: 100px;
+  margin-right: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* ✅ Fix for absolute positioning inside */  
+  /* Corrected background with gradient */
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0),rgba(48, 48, 48, 0.24), rgb(0, 0, 0) 90%),
+    url('./assets/kaithiMain.png');  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -40px 0px;
+}
+.map2 {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  right: -390px; /* ✅ Adjust this instead of margin-left */
+  top: -0px;   /* ✅ Position it properly */
+  background-image: url('./assets/map/up.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: brightness(10);
+}
+.partner3 {
+  width: 900px;
+  height: 300px;
+  margin-top: 100px;
+  margin-right: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* ✅ Fix for absolute positioning inside */  
+  /* Corrected background with gradient */
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.63), rgb(0, 0, 0) 90%),
+    url('./assets/theri.png');  
+  background-size: cover;
+  background-position: -18px 0px;
+  background-repeat: no-repeat;
+}
+.map3 {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  right: -390px; /* ✅ Adjust this instead of margin-left */
+  top: 20px;   /* ✅ Position it properly */
+  background-image: url('./assets/map/JK.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* filter: brightness(10); */
+  
+}
+.map3 h2{
+  color:white;
+  margin-left: 80px;
+}
+.franchise .underlineImg{
+  position: relative;
+ bottom:-590px;
+}
+/* Gallery Section */
+.gallery {
+  padding: 6rem 0;
+  background-color: var(--color-white);
+  
+}
+.gallery .container{
+  overflow: hidden;
+}
+.gallery .container h2{
+  font-size: 45px;
+  font-family: poppins;
+}
+.gallery-slider {
+  margin: 0 -1rem;
+  /* overflow: hidden; */
+}
+
+.gallery-slide {
+  padding: 0 1rem;
+  overflow-y: hidden;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Events Section */
+.events {
+  padding: 0 0;
+  background-color: var(--color-cream);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.events .container h2{
+    font-size: 45px;
+    font-family: poppins;
+}
+.event-card {
+  background: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+.event-content h3{
+  font-size: 25px;
+  font-weight: 700;
+}
+.event-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 1.5rem;
+}
+
+/* Reviews Section */
+.reviews {
+  padding: 6rem 0;
+  text-align: center;
+  padding-top: 50px;
+  background-color: black;
+}
+.reviews h2{
+  font-size: 45px;
+  font-family: poppins;
+  padding-bottom: 20px;
+  color:#D4A574;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.review-card {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.review-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+}
+
+.review-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stars {
+  color: gold;
+  margin-bottom: 1rem;
+  display: flex;
+  margin-left: 100px;
+}
+/* delivery banner */
+
+.delivery{
+  width: 100%;
+  height:300px;
+  background-image: url('./assets/delivery2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 -20px;
+
+}
+/* Footer */
+.footer {
+  padding-top: 35px;
+  /* padding: 4rem 0; */
+  background-color:black;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  
+}
+
+.footer-section h3 {
+  color: var(--color-accent);
+  font-size: 25px;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+footer .copyright{
+  font-size: 10px;
+  padding-top: 20px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  html{
+    scroll-behavior: smooth;
+  }
+  .nav-links {
+    display: none; /* hide desktop nav */
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1002;
+  }
+
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: black;
+    padding: 2rem;
+    transition: right 0.3s ease;
+    z-index: 1001;
+  }
+
+  .mobile-nav-links.open {
+    right: 0;
+  }
+
+  .mobile-nav-links a {
+    color: rgb(255, 0, 255);
+    margin: 1rem 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    
+  }
+ 
+  .hero h1 {
+    font-size: 3rem;
+    
+  }
+  .LogoRotate {
+    /* position: relative; */
+    position: absolute;
+    right:20%;
+  }
+    
+  .about-content{
+    grid-template-columns: 1fr;
+  }
+  .owner{
+    background-color:var(--color-white);
+    margin: 0;
+    padding-bottom: 0;
+  }
+  .owner-content {
+    grid-template-columns: 1fr;
+  }
+  .about-content {
+    width: fit-content;
+    padding-left: 0px;
+    text-align: justify;
+    overflow: hidden;
+  }
+  .owner-content{
+    justify-content: center;
+    gap: 0rem;
+    
+  }
+  .owner-image{   
+    transform: scale(0.8);
+  }
+  .ownerTextArea{
+    text-align: center;
+    padding: 20px;
+  }
+  /* cofeemug image marque area */
+  .Marquecontainer{
+    /* height: 80vh; */
+    
+  }
+  .cofeeAnim{
+    background-color: var(--color-white);
+    margin-top: -90px;
+  }
+  .RightToLeft{
+    font-size: 10px; 
+    margin-top: 30px;
+  }
+  .LeftToRight{
+    bottom: 270px;
+    font-size: 10px;
+  }
+  .RightToLeftBottom{
+    
+    font-size: 10px;
+  }
+  .Imgcontainer img {
+        width: 100%;
+        
+  }
+  .scroll{
+    gap:0;
+  }
+  .scroll div{  
+    gap:0;
+  }
+  .scroll p{
+line-height: normal;
+  }
+  .products{
+    background-color: var(--color-white);
+    padding-top: 0;
+  }
+  .Product-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto; /* Let it grow with content */
+  }
+  .premiumQuality-section {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    height: auto;
+    padding: 20px;
+  }
+
+  .premiumImgContainer,
+  .premiumQuality-section .textContainer {
+    width: 90%;
+    background-position: center;
+    text-align: center;
+  }
+
+  .premiumQuality-section .textContainer {
+    text-align: center;
+  }
+
+  .premiumQuality-section #b {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .premiumQuality-section button {
+    margin: 20px auto;
+  }
+  .nav-links {
+    display: none;
+  }
+  .blackContent{
+    margin-top: 1400px;
+    height:420vh;
+  }
+  .item-card button{
+    margin-top: -5px;
+  }
+  .franchise{
+    margin-top: -20px;
+  }
+  .franchise .underlineImg{
+    bottom:-670px;
+  }
+  .partner1{
+    width: 375px;
+    height: 300px;
+    margin-left: 0px;
+    background-image: url('./assets/franchise/vikram.png');
+  }
+  .map1{
+    display: none;
+  }
+  .partner2{
+    width: 375px;
+    height: 300px;
+    margin-right: 0px;
+    margin-left:0px;
+    background-image: url('./assets/franchise/dilli.png');
+    background-position: 0px 20px;
+  }
+  .map2{
+    display: none;
+  }
+  .partner3{
+    width: 400px;
+    height: 300px;
+    margin-left: 0px;
+    background-image: url('./assets/franchise/theri.png');
+  }
+  .map3{
+    display: none;
+  }
+  .reviews {
+    margin-top: -1px;
+  }
+  .delivery{
+    background-color: black;
+    margin-top: -1px;
+    height:180px ;
+    background-image: url('./assets/deliveryMob2.png');
+    background-size: cover;
+  }
+  .footer{
+    margin-top: -2px;
+  }
+}
