@@ -362,7 +362,7 @@ Choco Truffle</h1>
         </div> 
 
       </div>
-      <img src={underline} className='underlineImg'></img>
+      {/* <img src={underline} className='underlineImg'></img> */}
       </section>
 
       <section id="gallery" className="gallery">
